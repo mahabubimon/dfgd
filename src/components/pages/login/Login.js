@@ -38,18 +38,18 @@ const Login = () => {
               Register
             </Link>
           </small>
-        </Form>
+        </Form> <br />
         <div className="text-center">
           <h3>
-            Or <br /> Sign In with
+            Or <br /> Sign-In with
           </h3>
-          <Button onClick={googleSignIn} className="fs-1 p-1" variant="light">
+          <Button onClick={googleSignIn} className="fs-1 p-1 m-1" variant="danger">
             <FaGoogle />
           </Button>
-          <Button onClick={gitHubSignIn} className="fs-1 p-1" variant="light">
+          <Button onClick={gitHubSignIn} className="fs-1 p-1 m-1" variant="warning">
             <FaGithub />
           </Button>
-          <Button onClick={googleSignIn} className="fs-1 p-1" variant="light">
+          <Button onClick={googleSignIn} className="fs-1 p-1 m-1" variant="info">
             <FaTwitter />
           </Button>
         </div>

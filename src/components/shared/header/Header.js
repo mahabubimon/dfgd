@@ -3,17 +3,16 @@ import { Button, Container, Nav, Navbar, Stack } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import useAuth from "../../../hooks/useAuth";
+import "./header.css"
 
 const Header = () => {
-  const headerLink = { color: "#000", textDecoration: "none" };
-
   const { user, logout } = useAuth();
 
   return (
     <header>
-      <Navbar fixed="top" bg="light" variant="light">
+      <Navbar fixed="top" bg="light">
         <Container>
-          <NavLink to="/" style={headerLink}>
+          <NavLink to="/" className="nav-link">
             <img
               className="w-25 img-fluid"
               src="https://i.ibb.co/XCNDTXt/logo2.png"
@@ -22,25 +21,23 @@ const Header = () => {
           </NavLink>
           <Nav className="ms-auto">
             <Stack direction="horizontal" gap={4}>
-              <NavLink to="/home" style={headerLink}>
+              <NavLink to="/home" className="nav-link">
                 Home
               </NavLink>
-              <NavLink to="/foods" style={headerLink}>
+              <NavLink to="/foods" className="nav-link">
                 Foods
               </NavLink>
               <NavLink
-                to="/cart"
-                style={headerLink}
-                className="fs-4 text-danger"
+                to="/cart" className="nav-link fs-4 text-danger"
               >
                 <AiOutlineShoppingCart />
               </NavLink>
               {user.displayName ? (
                 <div className="d-flex">
-                  <img
-                    className="img-fluid rounded-circle w-25"
-                    src={user.photoURL}
+
+                  <img src={user.photoURL}
                     alt=""
+                    className="user-image"
                   />
                   <span> {user.displayName}</span>
                   <Button className="btn-danger ms-4" onClick={logout}>
@@ -49,9 +46,8 @@ const Header = () => {
                 </div>
               ) : (
                 <NavLink
-                  className="bg-danger px-3 py-1 rounded"
+                  className="bg-danger px-3 py-1 rounded nav-link"
                   to="/login"
-                  style={headerLink}
                 >
                   Login
                 </NavLink>

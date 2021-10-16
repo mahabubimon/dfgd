@@ -7,7 +7,7 @@ const Footer = () => {
             <Container>
             <div className="row">
                 <div className="col-md-6">
-                    <img className="img-fluid w-25" src="https://i.ibb.co/6RqGqrN/logo.png" alt="" />
+                    <img className="img-fluid w-25" src="https://i.ibb.co/XCNDTXt/logo2.png" alt="" />
                 </div>
                 <div className="col-md-3">
                     <p>About Online Food</p>
