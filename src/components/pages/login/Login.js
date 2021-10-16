@@ -2,11 +2,11 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../banner/Banner.css";
-import { FaGoogle, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
-  const { googleSignIn, twitterSignIn } = useAuth();
+  const { googleSignIn, gitHubSignIn } = useAuth();
   return (
     <section className="row">
       <div className="col-md-7">
@@ -46,8 +46,8 @@ const Login = () => {
           <Button onClick={googleSignIn} className="fs-1 p-1" variant="light">
             <FaGoogle />
           </Button>
-          <Button onClick={twitterSignIn} className="fs-1 p-1" variant="light">
-            <FaTwitter />
+          <Button onClick={gitHubSignIn} className="fs-1 p-1" variant="light">
+            <FaGithub />
           </Button>
           <Button onClick={googleSignIn} className="fs-1 p-1" variant="light">
             <FaTwitter />
