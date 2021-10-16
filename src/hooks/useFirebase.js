@@ -33,20 +33,18 @@ const useFirebase = () => {
       .catch(error => setError(error.message));
     }
 
-    const logout = () => {
-      signOut(auth)
-      .then(() => {
-        setUser({});
-      });
-    }
-
     useEffect(() => {
         onAuthStateChanged(auth, user => {
-          if (user) {
-            setUser({});
-          }
-        });
+          user ? setUser(user) : setUser({})
+          });
       }, [auth]);
+
+      const logout = () => {
+        signOut(auth)
+        .then(() => {
+          setUser({});
+        });
+      }
 
     return {
         user,
