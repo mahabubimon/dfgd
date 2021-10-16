@@ -50,7 +50,7 @@ const Login = () => {
             <FaTwitter />
           </Button>
           <Button onClick={googleSignIn} className="fs-1 p-1" variant="light">
-            <FaGoogle />
+            <FaTwitter />
           </Button>
         </div>
       </div>
