@@ -1,5 +1,6 @@
 import {
     getAuth,
+    FacebookAuthProvider,
     GithubAuthProvider,
     GoogleAuthProvider,
     TwitterAuthProvider,
@@ -18,12 +19,19 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
+    const facebookProvider = new FacebookAuthProvider();
+
     const googleProvider = new GoogleAuthProvider();
 
     const gitHubProvider = new GithubAuthProvider();
 
     const twitterProvider = new TwitterAuthProvider();
 
+    const facebookSignIn = () => {
+        signInWithPopup(auth, facebookProvider)
+        .then(result => setUser(result.user))
+        .catch(error => setError(error.message));
+    }
     const googleSignIn = () => {
         signInWithPopup(auth, googleProvider)
         .then(result => setUser(result.user))
@@ -56,6 +64,7 @@ const useFirebase = () => {
     return {
         user,
         error,
+        facebookSignIn,
         googleSignIn,
         gitHubSignIn,
         twitterSignIn,

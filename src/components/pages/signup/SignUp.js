@@ -17,7 +17,7 @@ const SignUp = () => {
           <Form.Control type="email" placeholder="Your Email" /> <br />
           <Form.Control type="password" placeholder="Password" /> <br />
           <Form.Control type="password" placeholder="Confirm Password" />
-          <Form.Check className="text-start" label="Remember me." />
+          <Form.Check checked className="text-start" label="Remember me." />
           <Button className="btn-danger" type="submit">
             Register
           </Button>
