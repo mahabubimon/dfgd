@@ -2,6 +2,7 @@ import {
     getAuth,
     GithubAuthProvider,
     GoogleAuthProvider,
+    TwitterAuthProvider,
     onAuthStateChanged, 
     signInWithPopup, 
     signOut
@@ -21,6 +22,8 @@ const useFirebase = () => {
 
     const gitHubProvider = new GithubAuthProvider();
 
+    const twitterProvider = new TwitterAuthProvider();
+
     const googleSignIn = () => {
         signInWithPopup(auth, googleProvider)
         .then(result => setUser(result.user))
@@ -33,6 +36,12 @@ const useFirebase = () => {
       .catch(error => setError(error.message));
     }
 
+    const twitterSignIn = () => {
+      signInWithPopup(auth, twitterProvider)
+      .then(result => setUser(result.user))
+      .catch(error => setError(error.message));
+    }
+
     useEffect(() => {
         onAuthStateChanged(auth, user => {
           user ? setUser(user) : setUser({})
@@ -41,9 +50,7 @@ const useFirebase = () => {
 
       const logout = () => {
         signOut(auth)
-        .then(() => {
-          setUser({});
-        });
+        .then(() => setUser({}));
       }
 
     return {
@@ -51,6 +58,7 @@ const useFirebase = () => {
         error,
         googleSignIn,
         gitHubSignIn,
+        twitterSignIn,
         logout
     }
 };

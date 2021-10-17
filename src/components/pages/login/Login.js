@@ -6,7 +6,7 @@ import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
-  const { googleSignIn, gitHubSignIn } = useAuth();
+  const { googleSignIn, gitHubSignIn, twitterSignIn } = useAuth();
   return (
     <section className="row">
       <div className="col-md-7">
@@ -49,7 +49,7 @@ const Login = () => {
           <Button onClick={gitHubSignIn} className="fs-1 p-1 m-1" variant="warning">
             <FaGithub />
           </Button>
-          <Button onClick={googleSignIn} className="fs-1 p-1 m-1" variant="info">
+          <Button onClick={twitterSignIn} className="fs-1 p-1 m-1" variant="info">
             <FaTwitter />
           </Button>
         </div>
